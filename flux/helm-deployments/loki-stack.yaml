@@ -18,14 +18,14 @@ spec:
     loki:
       config:
         schema_config:
-        configs:
-          - from: 2021-05-11
-            store: boltdb-shipper
-            object_store: s3
-            schema: v11
-            index:
-              prefix: loki_index_
-              period: 24h
+          configs:
+            - from: 2021-05-11
+              store: boltdb-shipper
+              object_store: s3
+              schema: v11
+              index:
+                prefix: loki_index_
+                period: 24h
         storage_config:
           aws:
             s3:
