@@ -43,13 +43,15 @@ spec:
             s3forcepathstyle: true
             bucketnames: bluelightco-loki
             region: us-west-2
+            insecure: false
+            sse_encryption: false
           boltdb_shipper:
             shared_store: s3
-            active_index_directory: /var/loki/index
-            cache_location: /var/loki/cache
+            active_index_directory: /loki/index
+            cache_location: /loki/index_cache
             cache_ttl: 24h
           filesystem:
-            directory: /var/loki/chunks
+            directory: /loki/chunks
     grafana:
       enabled: true
       sidecar:
