@@ -40,6 +40,7 @@ spec:
         storage_config:
           aws:
             s3: s3://bluelightco-loki
+            s3forcepathstyle: true
             bucketnames: bluelightco-loki
             region: us-west-2
           boltdb_shipper:
