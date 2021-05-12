@@ -17,22 +17,22 @@ spec:
   values:
     loki:
       config:
-        # schema_config:
-        #   configs:
-        #     - from: 2021-05-11
-        #       store: boltdb-shipper
-        #       object_store: s3
-        #       schema: v11
-        #       index:
-        #         prefix: loki_index_
-        #         period: 24h
-        storage_config:
-          aws:
-            s3:
-            valueFrom:
-              secretKeyRef:
-                name: iam-loki-s3
-                key: S3_URL
+        schema_config:
+          configs:
+            - from: 2021-05-11
+              store: boltdb-shipper
+              object_store: s3
+              schema: v11
+              index:
+                prefix: loki_index_
+                period: 24h
+        # storage_config:
+        #   aws:
+        #     s3:
+        #     valueFrom:
+        #       secretKeyRef:
+        #         name: iam-loki-s3
+        #         key: S3_URL
             # region: us-west-2
           # boltdb_shipper:
           #   shared_store: aws
