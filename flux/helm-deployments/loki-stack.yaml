@@ -15,8 +15,8 @@ spec:
         namespace: flux-system
       interval: 1m
   values:
-    loki:
-      config:
+    # loki:
+    #   config:
         # schema_config:
         #   configs:
         #     - from: 2021-05-11
