@@ -47,17 +47,7 @@ spec:
             sse_encryption: false
           boltdb_shipper:
             shared_store: s3
-            # active_index_directory: /data/loki/boltdb-shipper-active
-            # cache_location: /data/loki/boltdb-shipper-cache
             cache_ttl: 24h
-          # filesystem:
-            # directory: /data/loki/chunks
-        # ruler:
-        #   storage:
-        #     type: local
-        #     local:
-        #       directory: /rules
-        #   rule_path: /tmp/scratch
     grafana:
       enabled: true
       sidecar:
