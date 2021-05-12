@@ -16,6 +16,17 @@ spec:
       interval: 1m
   values:
     loki:
+      env:
+        - name: AWS_ACCESS_KEY_ID
+          valueFrom:
+            secretKeyRef:
+              name: iam-loki-s3
+              key: AWS_ACCESS_KEY_ID
+        - name: AWS_SECRET_ACCESS_KEY
+          valueFrom:
+            secretKeyRef:
+              name: iam-loki-s3
+              key: AWS_SECRET_ACCESS_KEY
       config:
         schema_config:
           configs:
@@ -30,19 +41,13 @@ spec:
           aws:
             bucketnames: bluelightco-loki
             region: us-west-2
-        #     s3:
-        #     valueFrom:
-        #       secretKeyRef:
-        #         name: iam-loki-s3
-        #         key: S3_URL
-            # region: us-west-2
-          # boltdb_shipper:
-          #   shared_store: aws
-          #   active_index_directory: /var/loki/index
-          #   cache_location: /var/loki/cache
-          #   cache_ttl: 168h
-          # filesystem:
-          #   directory: /var/loki/chunks
+          boltdb_shipper:
+            shared_store: aws
+            active_index_directory: /var/loki/index
+            cache_location: /var/loki/cache
+            cache_ttl: 168h
+          filesystem:
+            directory: /var/loki/chunks
     grafana:
       enabled: true
       sidecar:
