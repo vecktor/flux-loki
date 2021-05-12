@@ -29,10 +29,10 @@ spec:
         storage_config:
           aws:
             s3:
-              valueFrom:
-                secretKeyRef:
-                  name: iam-loki-s3
-                  key: S3_URL
+            valueFrom:
+              secretKeyRef:
+                name: iam-loki-s3
+                key: S3_URL
             # region: us-west-2
           # boltdb_shipper:
           #   shared_store: aws
